@@ -6,12 +6,12 @@ import {Product} from '../models/product';
 export class ProductService {
 
   productList : AngularFireList<any>;
-  selectProduct: Product = new Product();
+  selectedProduct: Product = new Product();
 
   constructor(private firebase: AngularFireDatabase) { }
 
-  getProduct(){
-    this.productList = this.firebase.list('products');
+  getProducts(){
+    return this.productList = this.firebase.list('products');
   }
 
   insertProduct(product: Product){

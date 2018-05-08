@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -17,6 +18,9 @@ import { ProductComponent } from './components/products/product/product.componen
 // service
 import { ProductService } from './services/product.service';
 
+// Toastr
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,10 @@ import { ProductService } from './services/product.service';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     ProductService
